@@ -1,0 +1,12 @@
+{
+  "name": "alexberce/docker-wp",
+  "type": "library",
+  "description": "Docker WordPress environment",
+  "keywords": ["docker", "WordPress", "php"],
+  "homepage": "https://github.com/alexberce/docker-wp",
+  "license": "MIT",
+  "scripts": {
+    "deploy": "docker-compose up",
+    "destroy": "docker-compose down"
+  }
+}
