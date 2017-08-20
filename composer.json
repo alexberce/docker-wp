@@ -6,7 +6,7 @@
   "homepage": "https://github.com/alexberce/docker-wp",
   "license": "MIT",
   "scripts": {
-    "deploy": "docker-compose up",
+    "deploy": "docker-compose up -d",
     "destroy": "docker-compose down",
     "remove-all": "docker rm -f $(docker ps -a -q)"
   }

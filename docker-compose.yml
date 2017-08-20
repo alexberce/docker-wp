@@ -1,10 +1,12 @@
-version: '3.1'
+version: '2'
 
 services:
 
   wordpress:
     build: ./config/docker/web
     restart: unless-stopped
+    volumes:
+      - ./website/:/var/www/html
     ports:
       - 8080:80
     env_file:
@@ -16,3 +18,12 @@ services:
       - 30360:3306
     env_file:
       - ./.env
+
+  wpcli:
+    build:
+        context: ./config/docker/wpcli
+        dockerfile: Dockerfile
+    volumes_from:
+      - wordpress:rw
+    links:
+      - mysql:mysql
